@@ -3,11 +3,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
+                sh '/Users/xiaozhu/Desktop/TestProject/fastlane build'
             }
         }
+	stage('upload') {
+	    steps {
+		sh '/Users/xiaozhu/Desktop/TestProject/fastlane beta'
+	    }
+	}
     }
 }
