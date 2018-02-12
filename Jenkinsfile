@@ -1,5 +1,7 @@
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent { 
+	label 'iOS'
+	 }
     stages {
         stage('build') {
             steps {
