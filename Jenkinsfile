@@ -5,12 +5,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh '/Users/xiaozhu/Desktop/TestProject/fastlane build'
+                sh 'fastlane build'
             }
         }
 	stage('upload') {
 	    steps {
-		sh '/Users/xiaozhu/Desktop/TestProject/fastlane beta'
+		sh 'fastlane beta'
 	    }
 	}
     }
