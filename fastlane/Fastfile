@@ -13,11 +13,9 @@ default_platform(:ios)
 
 platform :ios do
   desc "Push a new beta build to TestFlight"
-  lane :build do
+  lane :upload do
     increment_build_number
     build_app(scheme: "TestProject")
-  end
-  lane :upload do
     upload_to_testflight
   end
 end

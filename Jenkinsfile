@@ -8,12 +8,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                sh "fastlane build"
-            }
-        }
-
         stage('Upload') {
             steps {
                 sh "fastlane upload"
