@@ -1,17 +1,22 @@
 pipeline {
-    agent { 
-	label 'iOS'
-	 }
     stages {
-        stage('build') {
+        stage('Checkout') {
             steps {
-                sh 'fastlane build'
+                checkout scm
+                sh 'git submodule update --init'
             }
         }
-	stage('upload') {
-	    steps {
-		sh 'fastlane beta'
-	    }
-	}
+
+        stage('Build') {
+            steps {
+                sh "fastlane build"
+            }
+        }
+
+        stage('Upload') {
+            steps {
+                sh "fastlane upload"
+            }
+        }
     }
 }
