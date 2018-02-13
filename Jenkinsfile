@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label "iOS"
+    }
     stages {
         stage('Checkout') {
             steps {
