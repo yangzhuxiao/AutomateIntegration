@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "iOS"
+        label "iOS_swarm"
     }
     stages {
         stage('Checkout') {
